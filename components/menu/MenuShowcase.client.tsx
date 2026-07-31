@@ -6,19 +6,19 @@ const CATEGORIES = ['Coffee Series', 'Frappe Series', 'Milk Series', 'Tea Series
 
 const PRODUCTS = {
   'Coffee Series': [
-    { id: 1, name: 'Lungo Coffee', desc: 'A perfectly extracted long black espresso shot, delivering bold and complex flavors directly to your palate.', price: 'Rp 25.000', image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop' },
-    { id: 2, name: 'Dalgona Coffee', desc: 'Whipped sweet coffee foam layered over iced milk for a creamy, rich, and intensely satisfying experience.', price: 'Rp 30.000', image: 'https://images.unsplash.com/photo-1593926521501-c852fcbb6219?q=80&w=800&auto=format&fit=crop' },
-    { id: 3, name: 'Filter Coffee', desc: 'Manual brewed specialty coffee that extracts the purest characteristics and subtle fruity notes of the bean.', price: 'Rp 59.000', image: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop' },
+    { id: 1, name: 'Lungo Coffee', desc: 'A perfectly extracted long black espresso shot, delivering bold and complex flavors directly to your palate.', price: 'Rp 25.000', image: '/menu/coffee-series.png' },
+    { id: 2, name: 'Dalgona Coffee', desc: 'Whipped sweet coffee foam layered over iced milk for a creamy, rich, and intensely satisfying experience.', price: 'Rp 30.000', image: '/menu/coffee-series.png' },
+    { id: 3, name: 'Filter Coffee', desc: 'Manual brewed specialty coffee that extracts the purest characteristics and subtle fruity notes of the bean.', price: 'Rp 59.000', image: '/menu/coffee-series.png' },
   ],
   'Frappe Series': [
-    { id: 4, name: 'Matcha Frappe', desc: 'Premium matcha green tea blended meticulously with ice and milk, topped with a delicate whipped cream swirl.', price: 'Rp 35.000', image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600&auto=format&fit=crop.jpg' },
-    { id: 5, name: 'Caramel Frappe', desc: 'Rich caramel syrup blended harmoniously with our signature espresso, ice, and smooth whole milk.', price: 'Rp 38.000', image: 'https://images.unsplash.com/photo-1473212888636-2244f77c38ac?q=80&w=800&auto=format&fit=crop' },
+    { id: 4, name: 'Matcha Frappe', desc: 'Premium matcha green tea blended meticulously with ice and milk, topped with a delicate whipped cream swirl.', price: 'Rp 35.000', image: '/menu/frappe-series.png' },
+    { id: 5, name: 'Caramel Frappe', desc: 'Rich caramel syrup blended harmoniously with our signature espresso, ice, and smooth whole milk.', price: 'Rp 38.000', image: '/menu/frappe-series.png' },
   ],
   'Milk Series': [
-    { id: 6, name: 'Hokkaido Milk', desc: 'Rich, creamy authentic Hokkaido-style milk served over crystal clear ice cubes for a refreshing dairy hit.', price: 'Rp 28.000', image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop.jpg' },
+    { id: 6, name: 'Hokkaido Milk', desc: 'Rich, creamy authentic Hokkaido-style milk served over crystal clear ice cubes for a refreshing dairy hit.', price: 'Rp 28.000', image: '/menu/milk-series.png' },
   ],
   'Tea Series': [
-    { id: 7, name: 'Earl Grey', desc: 'Classic Earl Grey tea infused with natural bergamot oil for a deeply refreshing, aromatic break.', price: 'Rp 22.000', image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800&auto=format&fit=crop' },
+    { id: 7, name: 'Earl Grey', desc: 'Classic Earl Grey tea infused with natural bergamot oil for a deeply refreshing, aromatic break.', price: 'Rp 22.000', image: '/menu/tea-series.png' },
   ]
 };
 
@@ -78,7 +78,7 @@ export default function MenuShowcase() {
           >
             {/* Left: Image Carousel Element */}
             <div className="w-full md:w-1/2 flex items-center justify-center">
-              <div className="aspect-[3/4] w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl bg-coffee-dark/5">
+              <div className="aspect-[3/4] w-full max-w-sm rounded-3xl overflow-hidden shadow-md bg-coffee-dark/5">
                 <img 
                   src={activeProduct.image} 
                   alt={activeProduct.name}

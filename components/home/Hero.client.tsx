@@ -15,7 +15,7 @@ export default function HeroClient() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="flex items-center text-coffee-bg mb-4 drop-shadow-md"
+        className="flex items-center text-coffee-bg mb-4"
       >
         <div className="w-6 h-[1px] bg-current mr-3"></div>
         <span className="font-sans text-xs md:text-sm font-bold tracking-[0.2em] uppercase">
@@ -28,7 +28,7 @@ export default function HeroClient() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-        className="font-serif text-5xl md:text-7xl font-bold text-coffee-white mb-6 leading-[1.1] drop-shadow-xl"
+        className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-coffee-white mb-6 leading-[1.1]"
       >
         We serve the <br className="hidden md:block" />
         richest coffee <br className="hidden md:block" />
@@ -40,7 +40,7 @@ export default function HeroClient() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-        className="font-sans text-lg md:text-xl text-coffee-bg/90 mb-10 max-w-xl drop-shadow-md leading-relaxed"
+        className="font-sans text-lg md:text-xl text-coffee-bg/90 mb-10 max-w-xl leading-relaxed"
       >
         Experience the authentic taste of boutique coffee crafted with passion, precision, and the finest beans sourced from around the world.
       </motion.p>
@@ -66,7 +66,7 @@ export default function HeroClient() {
         {/* Right Button - Ghost/Outline */}
         <Link 
           href="/menu"
-          className="inline-flex items-center justify-center px-6 py-3.5 text-xs md:text-sm font-sans font-bold uppercase tracking-wider rounded-md border border-coffee-bg text-coffee-bg hover:bg-coffee-bg hover:text-coffee-dark transition-all duration-300 drop-shadow-md"
+          className="inline-flex items-center justify-center px-6 py-3.5 text-xs md:text-sm font-sans font-bold uppercase tracking-wider rounded-md border border-coffee-bg text-coffee-bg hover:bg-coffee-bg hover:text-coffee-dark transition-all duration-300"
         >
           View Our Menu
           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

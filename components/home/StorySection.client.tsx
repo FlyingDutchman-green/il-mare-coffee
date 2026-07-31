@@ -8,7 +8,7 @@ export default function StorySectionClient() {
   return (
     <section className="py-16 md:py-24 bg-coffee-bg overflow-hidden">
       {/* Container utama menggunakan Grid 2 Kolom yang Center secara Vertikal */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         
         {/* KOLOM KIRI: TEKS & CTA */}
         <motion.div 
@@ -57,14 +57,11 @@ export default function StorySectionClient() {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           className="w-full"
         >
-          <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-coffee-white border border-coffee-dark/5">
+          <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-md bg-coffee-white border border-coffee-dark/5">
             <img 
-              src="/images/pouring-espresso.jpg" 
+              src="/about-story.png" 
               alt="Premium cafe interior pouring espresso"
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-              onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=800&auto=format&fit=crop";
-              }}
             />
           </div>
         </motion.div>

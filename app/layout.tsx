@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     locale: 'id_ID',
     type: 'website',
   },
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

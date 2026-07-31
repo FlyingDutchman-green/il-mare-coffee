@@ -7,22 +7,22 @@ const menuCategories = [
   { 
     id: 1, 
     name: 'Coffee Series', 
-    image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop'
+    image: '/menu/coffee-series.png'
   },
   { 
     id: 2, 
     name: 'Frappe Series', 
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600&auto=format&fit=crop.jpg'
+    image: '/menu/frappe-series.png'
   },
   { 
     id: 3, 
     name: 'Milk Series', 
-    image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop.jpg'
+    image: '/menu/milk-series.png'
   },
   { 
     id: 4, 
     name: 'Tea Series', 
-    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800&auto=format&fit=crop'
+    image: '/menu/tea-series.png'
   }
 ];
 
@@ -51,7 +51,7 @@ export default function SignatureBlendsClient() {
       </div>
 
       {/* 2. Grid Layout: 3-column responsive */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6 mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 sm:px-6 mb-16">
         {menuCategories.map((category, index) => (
           <Link href="/menu" key={category.id} className="block group">
             <motion.div

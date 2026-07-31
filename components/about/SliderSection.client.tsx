@@ -20,8 +20,8 @@ export default function SliderSection() {
 
   return (
     <section className="py-20 bg-coffee-bg">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative aspect-video md:aspect-[21/9] overflow-hidden rounded-[2rem] shadow-2xl bg-coffee-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative aspect-video md:aspect-[21/9] overflow-hidden rounded-[2rem] shadow-md bg-coffee-dark">
           <AnimatePresence mode="wait">
             <motion.img
               key={current}
