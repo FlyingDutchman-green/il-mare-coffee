@@ -25,11 +25,14 @@ export default function LocationsPage() {
         <div className="bg-coffee-white border border-coffee-dark/10 rounded-sm overflow-hidden shadow-sm flex flex-col md:flex-row">
           {/* Map Visual Representation */}
           <div className="w-full md:w-1/2 bg-coffee-dark/5 relative min-h-[350px] border-b md:border-b-0 md:border-r border-coffee-dark/10">
-             <div 
-               className="absolute inset-0 bg-cover bg-center"
-               style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop")' }}
-             />
-             <div className="absolute inset-0 bg-coffee-dark/10"></div>
+            <iframe 
+              src="https://maps.google.com/maps?q=IL+MARE+COFFEE+Kedungwuni+Pekalongan&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              className="absolute inset-0 w-full h-full border-0" 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="IL MARE COFFEE Kedungwuni Location"
+            ></iframe>
           </div>
           
           {/* Location Details */}
@@ -39,17 +42,17 @@ export default function LocationsPage() {
               <OpenNowBadge hours={PEKALONGAN_HOURS} />
             </div>
             
-            <h3 className="font-sans font-semibold text-coffee-dark mb-3">Pekalongan Branch</h3>
+            <h3 className="font-sans font-semibold text-coffee-dark mb-3">Kedungwuni Branch</h3>
             
             <address className="not-italic font-sans text-coffee-dark/70 mb-10 leading-relaxed">
-              Jl. Diponegoro No. 45<br />
-              Pekalongan Utara<br />
-              Kota Pekalongan, Jawa Tengah 51141<br />
+              Jl. Raya Podo, Capgawen, Kedungwuni Tim.<br />
+              Kec. Kedungwuni, Kabupaten Pekalongan<br />
+              Jawa Tengah 51173<br />
               Indonesia
             </address>
 
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=-6.8898,109.6745"
+              href="https://www.google.com/maps/search/?api=1&query=IL+MARE+COFFEE+Kedungwuni+Pekalongan"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-coffee-dark text-coffee-bg font-sans font-semibold rounded-full hover:bg-coffee-latte hover:text-coffee-white transition-all shadow-md w-full sm:w-auto self-start"

@@ -1,85 +1,97 @@
 'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const SIGNATURES = [
-  { id: '1', name: 'Lungo Coffee', price: 199, category: 'Special Coffee', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop' },
-  { id: '2', name: 'Dalgona Coffee', price: 159, category: 'Special Coffee', image: 'https://images.unsplash.com/photo-1589396575653-c09c794ff6a6?q=80&w=800&auto=format&fit=crop' },
-  { id: '6', name: 'Chocolate Tiramisu', price: 250, category: 'Special Dessert', image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=800&auto=format&fit=crop' },
+const menuCategories = [
+  { 
+    id: 1, 
+    name: 'Coffee Series', 
+    image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop'
+  },
+  { 
+    id: 2, 
+    name: 'Frappe Series', 
+    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600&auto=format&fit=crop.jpg'
+  },
+  { 
+    id: 3, 
+    name: 'Milk Series', 
+    image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600&auto=format&fit=crop.jpg'
+  },
+  { 
+    id: 4, 
+    name: 'Tea Series', 
+    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800&auto=format&fit=crop'
+  }
 ];
 
 export default function SignatureBlendsClient() {
   return (
-    <section className="py-24 md:py-32 bg-coffee-white border-y border-coffee-dark/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center mb-16"
-        >
-          <span className="font-sans text-sm font-bold tracking-widest text-coffee-latte uppercase mb-4 block">
-            Discover Our Favorites
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-coffee-dark mb-6">
-            Signature Blends
-          </h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {SIGNATURES.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.15 }}
-              whileHover={{ scale: 1.03, y: -4 }}
-              className="flex flex-col bg-coffee-bg border border-coffee-dark/10 rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="aspect-[4/3] w-full relative overflow-hidden border-b border-coffee-dark/5">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6 flex flex-col flex-grow justify-between bg-coffee-white">
-                <div>
-                  <span className="text-xs font-sans text-coffee-dark/60 uppercase tracking-wider block mb-1">
-                    {item.category}
-                  </span>
-                  <h3 className="font-serif text-xl font-bold text-coffee-dark mb-2">
-                    {item.name}
-                  </h3>
-                </div>
-                <p className="font-sans font-bold text-coffee-latte text-lg mt-3">
-                  Rp {item.price}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div 
+    <section className="py-24 bg-coffee-bg">
+      {/* 1. Section Header: Left-aligned */}
+      <div className="text-left max-w-7xl mx-auto px-6 mb-12">
+        <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center"
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-serif font-bold text-coffee-dark mb-4"
         >
-          <Link 
-            href="/menu"
-            className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-coffee-dark bg-coffee-dark text-coffee-bg font-sans font-semibold rounded-full hover:bg-coffee-bg hover:text-coffee-dark transition-colors shadow-md"
-          >
-            View Full Menu
-          </Link>
-        </motion.div>
+          Menu
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="font-sans text-coffee-dark/70 text-lg max-w-2xl"
+        >
+          Nikmati kelezatan minuman premium yang diracik dengan elegan, Always on Point bersama IL MARE COFFEE.
+        </motion.p>
       </div>
+
+      {/* 2. Grid Layout: 3-column responsive */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6 mb-16">
+        {menuCategories.map((category, index) => (
+          <Link href="/menu" key={category.id} className="block group">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col"
+            >
+              {/* 3. Category Card Sizing & Styling */}
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-coffee-dark/5">
+                <img 
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-center mt-4 text-sm md:text-base font-semibold text-coffee-dark tracking-wide font-sans">
+                {category.name}
+              </h3>
+            </motion.div>
+          </Link>
+        ))}
+      </div>
+
+      {/* 4. Center Bottom Button */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        className="flex justify-center"
+      >
+        <Link 
+          href="/menu"
+          className="inline-flex items-center justify-center px-10 py-4 text-sm font-sans font-bold uppercase tracking-wider rounded-full bg-coffee-dark text-coffee-bg hover:bg-coffee-latte transition-all duration-300 shadow-sm hover:shadow-md"
+        >
+          View Full Menu
+        </Link>
+      </motion.div>
     </section>
   );
 }

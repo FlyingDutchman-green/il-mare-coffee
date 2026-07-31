@@ -16,6 +16,7 @@ const NAV_LINKS = [
 export default function HeaderClient() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   const pathname = usePathname();
 
   const isHomePage = pathname === '/';
@@ -36,10 +37,25 @@ export default function HeaderClient() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="font-serif text-2xl font-bold tracking-wider">
-              IL MARE COFFEE
+            <Link href="/" className="flex items-center space-x-3 group h-full">
+              {!logoError && (
+                <img 
+                  src="/logo.svg" 
+                  alt="IL MARE Logo Mark" 
+                  className="h-8 w-auto object-contain transition-opacity duration-300"
+                  onError={() => setLogoError(true)}
+                />
+              )}
+              <div className="flex flex-col items-center text-[#4A2E2B] leading-none">
+                <span className="text-xl font-black tracking-wide font-sans uppercase">IL MARE</span>
+                <div className="flex items-center justify-center w-full mt-1 text-[8px] font-bold tracking-[0.25em] uppercase">
+                  <div className="h-[1px] w-3 bg-[#4A2E2B]"></div>
+                  <span className="mx-1.5 ml-2.5">COFFEE</span>
+                  <div className="h-[1px] w-3 bg-[#4A2E2B]"></div>
+                </div>
+              </div>
             </Link>
           </div>
 
@@ -48,7 +64,7 @@ export default function HeaderClient() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-sans text-sm font-medium hover:text-coffee-latte transition-colors"
+                className="font-sans text-xs font-semibold tracking-wide hover:text-coffee-latte transition-colors"
               >
                 {link.name}
               </Link>
@@ -58,10 +74,10 @@ export default function HeaderClient() {
           <div className="flex items-center gap-4">
             <Link
               href="/locations"
-              className={`hidden md:inline-flex px-6 py-2 rounded-full font-sans text-sm font-semibold transition-colors ${
+              className={`hidden md:inline-flex px-4 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-all border ${
                 shouldBeSolid
-                  ? 'bg-coffee-dark text-coffee-bg hover:bg-coffee-latte'
-                  : 'bg-coffee-white text-coffee-dark hover:bg-coffee-bg'
+                  ? 'border-coffee-dark hover:bg-coffee-dark hover:text-coffee-bg'
+                  : 'border-coffee-white hover:bg-coffee-white hover:text-coffee-dark'
               }`}
             >
               Visit Us
